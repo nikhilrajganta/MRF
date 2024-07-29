@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>reduce using map and filter</title>
+  </head>
+  <body>
+    <script>
+      //map
+      const customMap = (array, callback) => {
+        return array.reduce((acc, current) => {
+          acc.push(callback(current));
+          return acc;
+        }, []);
+      };
+
+      //filter
+      const customFilter = (array, callback) => {
+        return array.reduce((acc, current) => {
+          if (callback(current)) {
+            acc.push(current);
+          }
+          return acc;
+        }, []);
+      };
+    </script>
+  </body>
+</html>
